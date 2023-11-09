@@ -1,0 +1,451 @@
+:root {
+  --txt-primary: #ca5f31;
+  --bg: #f0f0f0;
+  --text: #222;
+  --body-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ .dark {
+  --bg: #222;
+  --text: #f0f0f0;
+} 
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #2d2d2d;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+nav .logo h1 {
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+  gap: 40px;
+  display: none;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+/* Estilos para la caja de iconos sociales */
+.social-box {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  background-color: #fff; /* Color de fondo de la caja */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilos para los iconos sociales dentro de la caja */
+.social-box .social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilos para los iconos individuales */
+.social-box i {
+  font-size: 30px;
+  color: #555;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilos cuando se pasa el mouse sobre los iconos */
+.social-box i:hover {
+  color: #ca5f31; /* Cambia el color al pasar el mouse sobre el icono */
+}
+/* Estilos para el icono de hamburguesa */
+.menu-toggle {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 50px;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+/* Estilos para el icono cuando se activa (abre el menú) */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Estilos para el menú desplegable (inicialmente oculto) */
+
+.mobile-menu {
+  display: none;
+  background-color: #333; /* Color de fondo del menú */
+  position: absolute;
+  top: 60px; /* Ajusta la posición según tu diseño */
+  right: 0;
+  width: 100%;
+  padding: 20px; /* Ajusta el espaciado interior según tu diseño */
+  z-index: 1; /* Asegura que esté debajo del icono */
+}
+
+/* Estilos para la sección "Hero" */
+.image-container {
+  text-align: center;
+  display: flex;
+  row-gap: 0%;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+  padding: 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 0;
+  color: var(--txt-primary);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 10%;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 20px 0;
+  color: #fff; /* Color blanco para los párrafos */
+}
+
+.hero a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.hero a:hover {
+  background-color: #ff5733;
+}
+
+/* Estilos para otras secciones (Acerca de, Proyectos, Contacto, Get, Skills) */
+.about, .projects, .contact, .get, .skills {
+  background-color: transparent;
+  color: #c2b4b4;
+  text-align: center;
+  padding: 100px 0;
+  display: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 50;
+  border-radius: 5px;
+}
+
+/* Estilos para enlaces dentro de las secciones (párrafos y elementos de enlace) */
+.about p, .projects p, .contact p, .get p, .skills p {
+  color: #aea3a3; /* Color blanco para los párrafos */
+}
+
+.about h2, .projects h2, .contact h2, .get h2, .skills h2 {
+  color: #d8c1c1; /* Color más oscuro para los títulos h2 */
+  font-weight: bold; /* Opcional: Puedes ajustar el peso de la fuente */
+}
+
+/* Estilos para el contenedor del icono */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+/* Estilos para el ícono */
+i.fas.fa-adjust {
+  font-size: 50px; /* Ajusta el tamaño del ícono según tus preferencias */
+  color: #333; /* Cambia el color del ícono según tus preferencias */
+}
+
+/* Estilos para la sección "Mis Skills" */
+.skills {
+  background-color: transparent;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.skills h2 {
+  font-size: 24px;
+  color: #ccbaba;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de iconos */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* Estilos para los iconos de habilidades */
+.skill-icon {
+  font-size: 100px; /* Ajusta el tamaño deseado */
+  color: #ffffff; /* Cambia el color según tus preferencias */
+  margin: 10px; /* Ajusta el margen según tus necesidades */
+}
+
+.skill-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Estilos para la caja de contacto */
+.contact-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%; /* Ajusta el ancho según tus preferencias */
+  max-width: 400px; /* Establece el ancho máximo */
+  margin: 0 auto; /* Centra la caja horizontalmente */
+  box-sizing: border-box; /* Evita que los bordes y el relleno afecten el tamaño total */
+}
+/* Estilos para los campos de entrada y el área de texto */
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Evita que los bordes y el relleno afecten el tamaño total */
+}
+/* Estilos para el título */
+.contact-box h2 {
+  color: #333;
+}
+
+/* Estilos para la información de contacto */
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Estilos para cada ítem de información */
+.info-item {
+  flex: 1;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ca5f31; /* Color de los íconos */
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+  margin-top: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #ca5f31; /* Color del botón */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #ff5733; /* Cambia el color al pasar el mouse sobre el botón */
+}
+
+/* Estilos para el menú lateral */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px; /* Ajusta según el tamaño de tu barra de navegación */
+}
+
+/* Estilos para el contenido de la página que se desplaza al abrir el menú lateral */
+.content {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* Estilos para el botón de cerrar el menú */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn:hover {
+  color: #ca5f31;
+}
+
+/* Estilos para los enlaces dentro del menú lateral */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Cambia el color del texto al pasar el mouse sobre los enlaces */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Estilos para el icono de hamburguesa */
+.menu-toggle {
+  background: none;
+  border: none;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  z-index: 2;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (min-width: 768px) {
+  /* Ocultar la navegación en dispositivos móviles */
+  nav ul {
+    display: flex;
+  }
+  nav ul li {
+    display: flex;
+  }
+
+  /* Mostrar el icono de hamburguesa en dispositivos móviles */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Ajustes para el menú desplegable en dispositivos móviles */
+  .mobile-menu {
+    display: block;
+  }
+  .contact-box {
+    width: 90%; /* Ajusta el ancho para dispositivos móviles */
+    max-width: none; /* Elimina el ancho máximo en dispositivos móviles */
+  }
+}
